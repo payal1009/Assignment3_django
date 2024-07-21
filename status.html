@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check User status Active/ inactive</title>
+</head>
+<body>
+    <h1>User status</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if user_status %}
+                {% for x in user_status %}
+                <tr>
+                    <td>{{ x.i}}</td>
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.email }}</td>
+                    <td>{{ x.date}}</td>
+                    <td>{{ x.status}}</td>
+                </tr>
+
+                {% endfor %}         
+            {% else %}
+            <p>No items found for the provided ID.</p>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>
